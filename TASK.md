@@ -11,7 +11,7 @@ that this repository does not represent the actual code of CGTrader, but only ac
 
 ## Notes & Requirements
 
-* Try not to spend more than 4 hours on this task. This will constrain you not to spend too much time on trivial
+* Try not to spend more than 7 hours on this task. This will constrain you not to spend too much time on trivial
 details (sometimes you have to make compromises in order to deliver fast).
 * Use git to track your changes.
 * Fork this repository, when finished, send us the link to it or simply zip the project and send it via e-mail.
