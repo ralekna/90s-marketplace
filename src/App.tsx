@@ -1,6 +1,3 @@
-import pictureA from './a.jpg';
-import pictureB from './b.jpg';
-
 function cartItems() {
   return []
 }
@@ -45,7 +42,7 @@ function App() {
               Add to cart
             </button>
 
-            <div><img src={pictureB} width={640}/></div>
+            <div><img src="/images/b.jpg" width={640}/></div>
           </div>
         )
       }
@@ -59,7 +56,7 @@ function App() {
               Add to cart
             </button>
 
-            <div><img src={pictureA} width={640}/></div>
+            <div><img src="/images/a.jpg" width={640}/></div>
           </div>
         )
       }
