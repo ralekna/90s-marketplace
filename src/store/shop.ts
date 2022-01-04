@@ -30,12 +30,7 @@ export class Shop {
     this.cart = this.cart.filter(({itemId}) => itemId !== cartItemId);
   }
 
-  public async loadProducts(): Promise<void> {
-    try {
-      this.products = await (await fetch("/data/products.json")).json();
-      console.log(`Products loaded`, this.products);
-    } catch {
-      console.error(`Failed to load products data`);
-    }
+  public setProducts(products: Product[]): void {
+    this.products = products;
   }
 }
