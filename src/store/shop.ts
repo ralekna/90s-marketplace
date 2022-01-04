@@ -26,8 +26,16 @@ export class Shop {
     }
   }
 
+  public getProductById(productId?: string): Product | undefined {
+    return this.products?.find(({id}) => id === productId);
+  }
+
   public removeFromCart(cartItemId: string): void {
     this.cart = this.cart.filter(({itemId}) => itemId !== cartItemId);
+  }
+
+  public emptyCart(): void {
+    this.cart = [];
   }
 
   public setProducts(products: Product[]): void {
