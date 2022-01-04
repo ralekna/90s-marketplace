@@ -1,36 +1,43 @@
+import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { Shop } from "./store/shop";
+
 function cartItems() {
   return []
 }
 
-function App() {
+const App = observer(({store}: {store: Shop}) => {
+  useEffect(() => {
+    store.loadProducts();
+  })
   return (
+    <>
+    <header>
+      <h1>90s shop</h1>
+      <nav>
+        <ul style={{listStyleType: 'none', display: 'flex'}}>
+          <li><a href="/">Home</a></li>
+          |
+          <li><a href="/cart">Cart ({cartItems().length})</a></li>
+        </ul>
+      </nav>
+      <hr/>
+    </header>
     <main>
-      <header>
-        90s shop
-        <nav>
-          <ul style={{listStyleType: 'none', display: 'flex'}}>
-            <li><a href="/">Home</a></li>
-            |
-            <li><a href="/cart">Cart ({cartItems().length})</a></li>
-          </ul>
-        </nav>
-        <hr/>
-      </header>
-
       {
         window.location.pathname === '/' && (
-          <div>
-            Welcome to our shop!
-
-            <p>
-              You are probably interested in <a href="/products/a">A</a>.
-            </p>
-
-            <p>
-              Check out the newest product <a href="/products/b">B</a>!
-            </p>
-          </div>
-        )
+          <>
+            <h2>Welcome to our shop!</h2>
+            {
+              store.products ?
+              <ul>
+                { store.products.map(({id, headline}) => 
+                  <li key={id}><a href={`/products/${id}`}>{headline}</a></li>
+                ) }
+              </ul>
+              : <div>Loading...</div>
+            }
+        </>)
       }
       {
         window.location.pathname === '/products/b' && (
@@ -72,7 +79,8 @@ function App() {
         )
       }
     </main>
+    </>
   );
-}
+});
 
 export default App;

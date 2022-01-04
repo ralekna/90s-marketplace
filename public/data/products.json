@@ -1,0 +1,16 @@
+[
+  {
+    "id": "a",
+    "headline": "You are probably interested in A.",
+    "title": "Product A",
+    "price": "10",
+    "currency": "USD"
+  },
+  {
+    "id": "b",
+    "headline": "Check out the newest product B!",
+    "title": "Product B",
+    "price": "30",
+    "currency": "USD"
+  }
+]
