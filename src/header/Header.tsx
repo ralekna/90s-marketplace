@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ShopContext } from "../store/shop-context";
 
 export const Header = observer(() => {
@@ -10,12 +10,12 @@ export const Header = observer(() => {
     <header>
       <h1>90s shop</h1>
       <nav>
-        <ul style={{ listStyleType: "none", display: "flex" }}>
+        <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink end to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/cart">Cart ({cart.length})</Link>
+            <NavLink end to="/cart">Cart ({cart.length})</NavLink>
           </li>
         </ul>
       </nav>

@@ -1,5 +1,5 @@
 import { createContext } from "react";
 import { Shop } from "./shop";
-import { store } from "./store";
+import { getStore } from "./store";
 
-export const ShopContext = createContext<Shop>(store);
+export const ShopContext = createContext<Shop>(getStore());

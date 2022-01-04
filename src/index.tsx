@@ -4,9 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ShopContext } from './store/shop-context';
-import { store } from "./store/store";
+import { getStore } from "./store/store";
 
-
+const store = getStore();
 
 ReactDOM.render(
   <React.StrictMode>

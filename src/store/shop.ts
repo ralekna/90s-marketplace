@@ -1,14 +1,4 @@
-export type Product = {
-  id: string;
-  headline: string;
-  title: string;
-  price: string,
-  currency: string;
-};
-
-export type CartItem = Product & {
-  itemId: string;
-}
+import type { CartItem, Product } from "../types";
 
 export class Shop {
 
@@ -17,7 +7,7 @@ export class Shop {
     public cart: CartItem[] = []
   ) {}
 
-  public addToCart(productId: string): void {
+  public addToCart = (productId: string): void => {
     const product = this.products?.find(({id}) => id === productId);
     if (product) {
       this.cart.push({...product, itemId: `Item${Date.now()}`});
@@ -26,19 +16,19 @@ export class Shop {
     }
   }
 
-  public getProductById(productId?: string): Product | undefined {
+  public getProductById = (productId?: string): Product | undefined => {
     return this.products?.find(({id}) => id === productId);
   }
 
-  public removeFromCart(cartItemId: string): void {
+  public removeFromCart = (cartItemId: string): void => {
     this.cart = this.cart.filter(({itemId}) => itemId !== cartItemId);
   }
 
-  public emptyCart(): void {
+  public emptyCart = (): void => {
     this.cart = [];
   }
 
-  public setProducts(products: Product[]): void {
+  public setProducts = (products: Product[]): void => {
     this.products = products;
   }
 }
