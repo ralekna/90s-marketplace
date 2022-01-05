@@ -17,10 +17,10 @@ export const Cart = observer(() => {
     <div>
       <h2>Are you ready to purchase these?</h2>
       <ul>
-        {cart.map((item) => (
-          <li key={item.itemId}>
-            <Link to={`/products/${item.id}`}>{item.title}</Link>
-            <button onClick={() => removeFromCart(item.itemId)}>Remove</button>
+        {cart.map((item, index) => (
+          <li key={index}>
+            <Link to={`/products/${item.id}`} data-testid={`cart-item-${index}`}>{item.title}</Link>
+            <button onClick={() => removeFromCart(item.itemId)} data-testid={`remove-button-${index}`}>Remove</button>
           </li>
         ))}
       </ul>

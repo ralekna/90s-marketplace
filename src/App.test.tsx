@@ -5,24 +5,9 @@ import App from "./App";
 import * as productsService from "./services/products";
 import { ShopContext } from "./store/shop-context";
 import { getStore } from "./store/store";
+import { PRODUCTS } from "./test-resources/data";
 
 describe(`90's shop integration tests`, () => {
-  const PRODUCTS = [
-    {
-      id: "0",
-      headline: "Product 0 headline",
-      title: "Product 0",
-      price: "10",
-      currency: "USD",
-    },
-    {
-      id: "1",
-      headline: "Product 1 headline",
-      title: "Product 1",
-      price: "20",
-      currency: "EUR",
-    },
-  ];
 
   describe(`without preloaded products`, () => {
     afterEach(() => {
