@@ -1,3 +1,4 @@
+import "./Header.scss";
 import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
@@ -8,7 +9,7 @@ export const Header = observer(() => {
 
   return (
     <header>
-      <h1>90s shop</h1>
+      <h1>🙂 90s shop</h1>
       <nav>
         <ul>
           <li>
@@ -19,7 +20,6 @@ export const Header = observer(() => {
           </li>
         </ul>
       </nav>
-      <hr />
     </header>
   );
 });

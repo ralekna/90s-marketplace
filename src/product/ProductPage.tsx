@@ -1,3 +1,4 @@
+import "./ProductPage.scss";
 import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
@@ -9,24 +10,26 @@ export const ProductPage = observer(() => {
   const product = getProductById(productId);
 
   if (!product) {
-    return <div>Not found!</div>;
+    return <h2>Not found!</h2>;
   }
   return (
-    <div>
-      <h1>{product.title}</h1>
-      <p>
-        Price: {product.price} {product.currency}
-      </p>
+    <>
+      <h2>{product.title}</h2>
+      <div className="product">
+        
+        <div className="price">
+          <span>Price: {product.price} {product.currency}</span>
+          <button onClick={() => addToCart(product.id)}>Add to cart</button>
+        </div>
 
-      <button onClick={() => addToCart(product.id)}>Add to cart</button>
-
-      <div>
-        <img
-          src={`/images/${product.id}.jpg`}
-          width={640}
-          alt={product.title}
-        />
+        <div className="image">
+          <img
+            src={`/images/${product.id}.jpg`}
+            width={640}
+            alt={product.title}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 });

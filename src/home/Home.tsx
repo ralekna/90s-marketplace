@@ -10,7 +10,7 @@ export const Home = observer(() => {
     <>
       <h2>Welcome to our shop!</h2>
       {products ? (
-        <ul>
+        <ul className="products">
           {products.map(({ id, headline }) => (
             <li key={id}>
               <Link to={`/products/${id}`}>{headline}</Link>

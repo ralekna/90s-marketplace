@@ -1,3 +1,4 @@
+import "./App.scss"
 import { Route, Routes } from "react-router-dom";
 import { Cart } from "./cart/Cart";
 import { Header } from "./header/Header";
