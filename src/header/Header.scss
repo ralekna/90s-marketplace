@@ -6,9 +6,6 @@ header {
     font-size: 3rem;
     font-style: italic;
     color: $text-color;
-    &::first-letter {
-      font-style: normal;
-    }
   }
   nav {
      ul {

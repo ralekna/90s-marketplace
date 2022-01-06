@@ -9,7 +9,7 @@ export const Header = observer(() => {
 
   return (
     <header>
-      <h1>🙂 90s shop</h1>
+      <h1>90s shop</h1>
       <nav>
         <ul>
           <li>
