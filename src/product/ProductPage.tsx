@@ -24,6 +24,7 @@ export const ProductPage = observer(() => {
 
         <div className="image">
           <img
+            data-testid="product-image"
             src={`/images/${product.id}.jpg`}
             width={640}
             alt={product.title}
