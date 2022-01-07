@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ShopContext } from './store/shop-context';
+import { getStore } from "./store/store";
+
+const store = getStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <ShopContext.Provider value={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ShopContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

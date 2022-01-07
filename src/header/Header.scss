@@ -1,0 +1,40 @@
+@import "./../styles/colors.scss";
+header {
+  h1 {
+    margin-left: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: $text-color;
+  }
+  nav {
+     ul {
+      display: inline-flex;
+      margin-bottom: 0;
+      li {
+        &:not(:last-of-type) {
+          margin-right: 0.2rem;
+        }
+
+        a {
+          display: inline-block;
+          border-radius: 0.6rem 0.6rem 0 0;
+          padding: 0.6rem;
+          background-color: $button-background-color;
+          color: $text-color;
+          font-size: 1.2rem;
+          text-decoration: none;
+          &:hover, &:active, &.active {
+            background-color: $button-background-hover-color;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    &:after {
+      display: block;
+      height: 1rem;
+      background-color: $button-background-hover-color;
+    }
+  }
+}

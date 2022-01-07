@@ -1,0 +1,52 @@
+@import "./styles/colors.scss";
+html {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  margin-top: 0;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  color: $background-color;
+  background-color: $button-background-hover-color;
+}
+
+button {
+  background-color: $button-background-color;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  font-size: 1rem;
+  border: none;
+  color: $text-color;
+  &:hover, &:active {
+    background-color: $button-background-hover-color;
+    color: white;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: $text-color;
+  }
+}
+
+.products {
+  li, p {
+    margin-bottom: 0.2rem;
+    button {
+      margin-left: 0.5rem;
+    }
+  }
+}
